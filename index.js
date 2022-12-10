@@ -38,6 +38,65 @@ function sumInput() {
 //         можно хранить в value соответствующих input-ов и option-ов, 
 //         а потом просуммировать их в цикле*)
 
+const carButton = document.querySelector('#buttonID');
+const carPriceResult = document.querySelector('#carPriceResult');
+const carModel = document.querySelectorAll('input[name="model"]');
+const carEquipement = document.querySelectorAll('input[name="equipement"]');
+const carFullPrice = [];
+
+const carModelPrice = carModel.value;
+const carColor = document.getElementById('color');
+
+carColor.addEventListener('change',(event)=>{
+    if(carColor.value > 0){
+        console.log(carColor.value);
+    }
+    })
+
+
+    carButton.onclick = function countPrice() {
+for (let i=0; i<carModel.length; i++) {
+    
+
+    if (carModel[i].checked) {
+        const carModelPrice = +carModel[i].value;
+        carFullPrice[0] = carModelPrice;
+    }
+}
+const carEquipement = document.querySelectorAll('input[name="equipement"]');
+
+for (let i=0; i<carEquipement.length; i++) {
+if (carEquipement[i].checked) {
+    const carEquipementPrice = +carEquipement[i].value;
+    //console.log(carEquipementPrice);
+    carFullPrice[1] = carEquipementPrice;
+    
+}
+}
+carFullPrice[2] = +carColor.value;
+
+
+
+const withWheels = document.querySelector('#wheels');
+
+if (withWheels.checked) {
+    withWheels.value = Number(4000);
+    carFullPrice[3] = +withWheels.value;
+}
+else { withWheels.value = Number(0);
+    carFullPrice[3] = +withWheels.value;
+
+}
+
+let count = 0;
+carFullPrice.forEach(item=>{
+    count = count + item;
+})
+const carPriceResult = document.querySelector('#carPriceResult');
+carPriceResult.innerHTML = "Вам надо заплатить " + count + " рублей";
+
+}
+
 
 // - 1. Дан массив `['js', 'css', 'html']`. Выведите на экран первый элемент.
 

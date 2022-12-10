@@ -34,40 +34,52 @@
 <hr>
 
 <div class="autoCalc">
+    <h3>Модель автомобиля "Москвич":</h3>
+<input type="radio" name="model" value="10000">
+<label for="">Москвич 3</label>   
+<input type="radio" value="7000" name="model">
+<label for="">Святогор</label>    
+<input type="radio" value="5000" name="model">
+<label for="">412 комби</label>    
+</div>
+
+<div class="autoCalc">
+    <h3>Комплектация автомобиля:</h3>
+<input type="radio" id="" name="equipement" value="0">
+<label for="">Бомж</label>  
+<input type="radio" id="" name="equipement" value="2000">
+<label for="">Комфорт</label> 
+<input type="radio" id="" name="equipement" value="4000">
+<label for="">Премиум</label> 
+</div>
+
+<div class="autoCalc">
 
     <div class="autoCalc">
-<select name="" id="">
-    <option value="">1</option>
-    <option value="">2</option>
-    <option value="">3</option>
+    
+<select id="color">
+    <option hidden>Выберите цвет автомобиля</option>
+    <option name="color" value="1000">Фиолетовый в крапинку</option>
+    <option name="color" value="2000">Черный</option>
+    <option name="color" value="3000">Белый перламутр</option>
 </select>
 </div>
 
 <div class="autoCalc">
+    <h3>С колесами?</h3>
 <label for="">
-    <input type="checkbox">
+    Да <input id="wheels" type="checkbox" value="4000"> 
 </label>
-<label for="">
-    <input type="checkbox">
-</label>
-<label for="">
-    <input type="checkbox">
-</label>
+
+
 </div>
 
 
 <div class="autoCalc">
-<input type="radio" id="">
-<label for=""></label>
-<input type="radio" id="">
-<label for=""></label>
-<input type="radio" id="">
-<label for=""></label>
+<button id="buttonID">Рассчитать стоимость</button>
 </div>
 
-<div class="autoCalc">
-<button>Рассчитать стоимость</button>
-</div>
+<div id="carPriceResult"></div>
 
 </div>
 
